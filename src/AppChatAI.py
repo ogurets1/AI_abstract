@@ -26,14 +26,14 @@ class ChatApplication(QWidget):
         send_data = self.message_input.text()
         self.chat_display.append('You: ' + send_data)
         client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        client_socket.connect(("127.0.0.1", 5000))
+        client_socket.connect(("127.0.0.1", 9000))
         client_socket.sendall(bytes(send_data, "utf-8"))
         self.message_input.clear()
 
-    def get_message_server(self):
-        message_server = data
-        self.chat_display.append('Server: ' + message_server)
-        self.message_input.clear()
+    # def get_message_server(self):
+    #     message_server = data
+    #     self.chat_display.append('Server: ' + message_server)
+    #     self.message_input.clear()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
